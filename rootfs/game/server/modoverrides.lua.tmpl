@@ -1,0 +1,15 @@
+return {
+  {{ if ne (envString "GENERAL_MODS") "" }}
+    {{ range $i, $mod := (split (envString "GENERAL_MODS") ",") }}{{if $i}},{{end}}
+    ["workshop-{{$mod}}"] = {
+      enabled = true,
+      configuration_options = { {{ if envIsSet (print "WORKSHOP_" $mod) }}
+        {{ envString (print "WORKSHOP_" $mod) }}
+      {{ end }} }
+    }{{ end }}
+  {{ end }}
+
+  {{ if (envIsSet "MOD_OVERRIDES") }}
+    {{ envString "MOD_OVERRIDES" }}
+  {{ end }}
+}

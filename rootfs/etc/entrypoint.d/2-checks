@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ -z "${DST_SERVER_TOKEN}" ]
+then
+  echo >&2 "Error: Please provide a DST_SERVER_TOKEN value"
+  exit 1
+fi
+
+if [ -z "${DST_CLUSTER_KEY}" ]
+then
+  echo >&2 "Error: Please provide a DST_CLUSTER_KEY value"
+  exit 1
+fi

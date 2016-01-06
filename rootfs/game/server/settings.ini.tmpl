@@ -1,0 +1,46 @@
+[account]
+server_token = {{ envString "SERVER_TOKEN" }}
+
+[network]
+default_server_name = {{ envString "SERVER_NAME" }}
+default_server_description = {{ envString "SERVER_DESC" }}
+
+server_intention = {{ envString "SERVER_INTENTION" }}
+server_port = {{ envInt "SERVER_PORT" }}
+server_password = {{ envString "SERVER_PASSWORD" }}
+
+game_mode = {{ envString "GAME_MODE" }}
+max_players = {{ envInt "MAX_PLAYERS" }}
+tick_rate = {{ envInt "TICK_RATE" }}
+connection_timeout = {{ envInt "CONNECTION_TIMEOUT" }}
+server_save_slot = {{ envInt "SERVER_SAVE_SLOT" }}
+whitelist_slots = {{ envInt "WHITELIST_SLOTS" }}
+pvp = {{ envBool "PVP" }}
+pause_when_empty = {{ envBool "PAUSE_WHEN_EMPTY" }}
+enable_snapshots = {{ envBool "ENABLE_SNAPSHOTS" }}
+enable_autosaver = {{ envBool "ENABLE_AUTOSAVER" }}
+enable_vote_kick = {{ envBool "ENABLE_VOTE_KICK" }}
+offline_server = {{ envBool "OFFLINE_SERVER" }}
+
+[shard]
+shard_enable = {{ envBool "SHARD_ENABLE" }}
+shard_id = {{ envString "SHARD_ID" }}
+shard_name = {{ envString "SHARD_NAME" }}
+
+cluster_key = {{ envString "CLUSTER_KEY" }}
+
+{{ if (envBool "MASTER") }}
+  is_master = true
+  master_ip = 127.0.0.1
+  master_port = {{ envInt "MASTER_PORT" }}
+  bind_ip = 0.0.0.0
+{{ else }}
+  is_master = false
+  master_ip = {{ envString "MASTER_IP" }}
+  master_port = {{ envInt "MASTER_PORT" }}
+  bind_ip = 0.0.0.0
+{{ end }}
+
+[MISC]
+CONSOLE_ENABLED = true
+autocompiler_enabled = true

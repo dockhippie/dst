@@ -1,0 +1,83 @@
+return {
+  override_enabled = true,
+
+  {{ if (envIsSet "PRESET") }}
+    preset = "{{ envString "PRESET" }}",
+  {{ end }}
+
+  animals = {
+    alternatehunt = "{{ envString "ANIMALS_ALTERNATEHUNT" }}",
+    angrybees = "{{ envString "ANIMALS_ANGRYBEES" }}",
+    beefalo = "{{ envString "ANIMALS_BEEFALO" }}",
+    beefaloheat = "{{ envString "ANIMALS_BEEFALOHEAT" }}",
+    bees = "{{ envString "ANIMALS_BEES" }}",
+    birds = "{{ envString "ANIMALS_BIRDS" }}",
+    butterfly = "{{ envString "ANIMALS_BUTTERFLY" }}",
+    buzzard = "{{ envString "ANIMALS_BUZZARD" }}",
+    catcoon = "{{ envString "ANIMALS_CATCOON" }}",
+    frogs = "{{ envString "ANIMALS_FROGS" }}",
+    hunt = "{{ envString "ANIMALS_HUNT" }}",
+    lightninggoat = "{{ envString "ANIMALS_LIGHTNINGGOAT" }}",
+    moles = "{{ envString "ANIMALS_MOLES" }}",
+    penguins = "{{ envString "ANIMALS_PENGUINS" }}",
+    perd = "{{ envString "ANIMALS_PERD" }}",
+    pigs = "{{ envString "ANIMALS_PIGS" }}",
+    rabbits = "{{ envString "ANIMALS_RABBITS" }}",
+    tallbirds = "{{ envString "ANIMALS_TALLBIRDS" }}"{{ if (envIsSet "ANIMALS_ADDITIONAL") }},
+    {{ envString "ANIMALS_ADDITIONAL" }}{{ end }}
+  },
+  misc = {
+    boons = "{{ envString "MISC_BOONS" }}",
+    branching = "{{ envString "MISC_BRANCHING" }}",
+    day = "{{ envString "MISC_DAY" }}",
+    frograin = "{{ envString "MISC_FROGRAIN" }}",
+    lightning = "{{ envString "MISC_LIGHTNING" }}",
+    loop = "{{ envString "MISC_LOOP" }}",
+    season = "{{ envString "MISC_SEASON" }}",
+    season_start = "{{ envString "MISC_SEASON_START" }}",
+    touchstone = "{{ envString "MISC_TOUCHSTONE" }}",
+    weather = "{{ envString "MISC_WEATHER" }}",
+    world_size = "{{ envString "MISC_WORLD_SIZE" }}",
+    wildfires = "{{ envString "MISC_WILDFIRES" }}"{{ if (envIsSet "MISC_ADDITIONAL") }},
+    {{ envString "MISC_ADDITIONAL" }}{{ end }}
+  },
+  monsters = {
+    bearger = "{{ envString "MONSTERS_BEARGER" }}",
+    chess = "{{ envString "MONSTERS_CHESS" }}",
+    deciduousmonster = "{{ envString "MONSTERS_DECIDUOUSMONSTER" }}",
+    deerclops = "{{ envString "MONSTERS_DEERCLOPS" }}",
+    dragonfly = "{{ envString "MONSTERS_DRAGONFLY" }}",
+    goosemoose = "{{ envString "MONSTERS_GOOSEMOOSE" }}",
+    hounds = "{{ envString "MONSTERS_HOUNDS" }}",
+    krampus = "{{ envString "MONSTERS_KRAMPUS" }}",
+    liefs = "{{ envString "MONSTERS_LIEFS" }}",
+    lureplants = "{{ envString "MONSTERS_LUREPLANTS" }}",
+    merm = "{{ envString "MONSTERS_MERM" }}",
+    spiders = "{{ envString "MONSTERS_SPIDERS" }}",
+    tentacles = "{{ envString "MONSTERS_TENTACLES" }}",
+    walrus = "{{ envString "MONSTERS_WALRUS" }}"{{ if (envIsSet "MONSTERS_ADDITIONAL") }},
+    {{ envString "MONSTERS_ADDITIONAL" }}{{ end }}
+  },
+  resources = {
+    flint = "{{ envString "RESOURCES_FLINT" }}",
+    flowers = "{{ envString "RESOURCES_FLOWERS" }}",
+    grass = "{{ envString "RESOURCES_GRASS" }}",
+    marshbush = "{{ envString "RESOURCES_MARSHBUSH" }}",
+    meteorshowers = "{{ envString "RESOURCES_METEORSHOWERS" }}",
+    meteorspawner = "{{ envString "RESOURCES_METEORSPAWNER" }}",
+    reeds = "{{ envString "RESOURCES_REEDS" }}",
+    rock = "{{ envString "RESOURCES_ROCK" }}",
+    rocks = "{{ envString "RESOURCES_ROCKS" }}",
+    sapling = "{{ envString "RESOURCES_SAPLING" }}",
+    trees = "{{ envString "RESOURCES_TREES" }}",
+    tumbleweed = "{{ envString "RESOURCES_TUMBLEWEED" }}"{{ if (envIsSet "RESOURCES_ADDITIONAL") }},
+    {{ envString "RESOURCES_ADDITIONAL" }}{{ end }}
+  },
+  unprepared = {
+    berrybush = "{{ envString "UNPREPARED_BERRYBUSH" }}",
+    cactus = "{{ envString "UNPREPARED_CACTUS" }}",
+    carrot = "{{ envString "UNPREPARED_CARROT" }}",
+    mushroom = "{{ envString "UNPREPARED_MUSHROOM" }}"{{ if (envIsSet "UNPREPARED_ADDITIONAL") }},
+    {{ envString "UNPREPARED_ADDITIONAL" }}{{ end }}
+  }
+}

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+if [[ ! -f /storage/adminlist.txt ]]
+then
+  touch /storage/adminlist.txt
+fi
+
+if [[ ! -f /storage/blocklist.txt ]]
+then
+  touch /storage/blocklist.txt
+fi
+
+if [[ ! -f /storage/whitelist.txt ]]
+then
+  touch /storage/whitelist.txt
+fi
