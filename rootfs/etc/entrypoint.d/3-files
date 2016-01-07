@@ -1,16 +1,16 @@
 #!/bin/bash
 
-if [[ ! -f /storage/adminlist.txt ]]
+if [[ ! -f /game/server/save/adminlist.txt ]]
 then
-  touch /storage/adminlist.txt
+  touch /game/server/save/adminlist.txt
 fi
 
-if [[ ! -f /storage/blocklist.txt ]]
+if [[ ! -f /game/server/save/blocklist.txt ]]
 then
-  touch /storage/blocklist.txt
+  touch /game/server/save/blocklist.txt
 fi
 
-if [[ ! -f /storage/whitelist.txt ]]
+if [[ ! -f /game/server/save/whitelist.txt ]]
 then
-  touch /storage/whitelist.txt
+  touch /game/server/save/whitelist.txt
 fi

@@ -12,7 +12,7 @@ RUN apt-get update && \
     clean
 
 EXPOSE 10999 10888
-VOLUME ["/storage"]
+VOLUME ["/game/server/save"]
 ADD rootfs /
 
 RUN chown -R steam:steam \
