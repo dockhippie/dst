@@ -11,7 +11,7 @@ RUN apt-get update && \
   apt-get \
     clean
 
-EXPOSE 10999/udp 10888/udp
+EXPOSE 10999 10888
 VOLUME ["/storage"]
 ADD rootfs /
 
