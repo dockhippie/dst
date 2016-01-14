@@ -6,7 +6,7 @@ checker() {
     echo "ok"
   else
     echo "failed"
-    /usr/bin/s6-svscanctl -t /etc/s6
+    /bin/s6-svscanctl -t /etc/s6
   fi
 }
 

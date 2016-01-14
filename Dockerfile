@@ -3,7 +3,7 @@ MAINTAINER Thomas Boerger <thomas@webhippie.de>
 
 WORKDIR /game
 ENTRYPOINT ["/usr/bin/entrypoint"]
-CMD ["/usr/bin/s6-svscan", "/etc/s6"]
+CMD ["/bin/s6-svscan", "/etc/s6"]
 
 RUN apt-get update && \
   apt-get install -y \
