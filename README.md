@@ -1,28 +1,24 @@
 # Don't Starve Together
 
-[![](https://badge.imagelayers.io/webhippie/dst:latest.svg)](https://imagelayers.io/?images=webhippie/dst:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/webhippie/dst.svg)](https://microbadger.com/images/webhippie/dst "Get your own image badge on microbadger.com")
 
-These are docker images for Don't Starve Together running on an
-[SteamCMD container](https://registry.hub.docker.com/u/webhippie/steamcmd/).
-
-
-## Usage
-
-```bash
-docker run --name dst-data busybox true
-
-docker run -d -p 10888:10888/udp \
-  --volumes-from dst-data \
-  --name dst \
-  webhippie/dst:latest
-```
+These are docker images for Don't Starve Together running on a [SteamCMD container](https://registry.hub.docker.com/u/webhippie/steamcmd/).
 
 
 ## Versions
 
-* [latest](https://github.com/dockhippie/dst/tree/master)
-  available as ```webhippie/dst:latest``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/dst/)
+* [latest](https://github.com/dockhippie/dst/tree/master) available as ```webhippie/dst:latest``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/dst/)
+
+
+## Volumes
+
+* /game/server/save
+
+
+## Ports
+
+* 10999
+* 10888
 
 
 ## Available environment variables
@@ -69,14 +65,7 @@ ENV DST_WORLDGEN_CONFIG # Path to worldgen override, optional
 ## Inherited environment variables
 
 ```bash
-ENV LOGSTASH_ENABLED false
-ENV LOGSTASH_HOST logstash
-ENV LOGSTASH_PORT 5043
-ENV LOGSTASH_CA /etc/ssl/logstash/certs/ca.pem # As string or filename
-ENV LOGSTASH_CERT /etc/ssl/logstash/certs/cert.pem # As string or filename
-ENV LOGSTASH_KEY /etc/ssl/logstash/private/cert.pem # As string or filename
-ENV LOGSTASH_TIMEOUT 15
-ENV LOGSTASH_OPTS
+ENV CRON_ENABLED false
 ```
 
 
@@ -98,5 +87,5 @@ MIT
 ## Copyright
 
 ```
-Copyright (c) 2015 Thomas Boerger <http://www.webhippie.de>
+Copyright (c) 2015-2017 Thomas Boerger <http://www.webhippie.de>
 ```
