@@ -1,10 +1,8 @@
 #!/bin/bash
 
 pushd /game/bin > /dev/null
-
-exec gosu steam ./dontstarve_dedicated_server_nullrenderer \
-  -console \
-  -persistent_storage_root /game \
-  -conf_dir server $@
-
+  exec su-exec steam ./dontstarve_dedicated_server_nullrenderer \
+    -console \
+    -persistent_storage_root /game \
+    -conf_dir server $@
 popd > /dev/null
