@@ -2,7 +2,7 @@
 
 [![](https://images.microbadger.com/badges/image/webhippie/dst.svg)](https://microbadger.com/images/webhippie/dst "Get your own image badge on microbadger.com")
 
-These are docker images for Don't Starve Together running on a [SteamCMD container](https://registry.hub.docker.com/u/webhippie/steamcmd/).
+These are docker images for [Don't Starve Together](https://www.kleientertainment.com/games/dont-starve-together) running on a [SteamCMD container](https://registry.hub.docker.com/u/webhippie/steamcmd/).
 
 
 ## Versions
