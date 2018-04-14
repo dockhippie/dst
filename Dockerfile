@@ -10,13 +10,20 @@ RUN apt-get update && \
     libcurl4-gnutls-dev:i386 && \
   apt-get \
     clean
-
-EXPOSE 10999 10888
-VOLUME ["/game/server/save"]
-ADD rootfs /
+COPY rootfs/game/params.txt /game/
 
 RUN chown -R steam:steam \
   /game
-
+  
 RUN /usr/bin/steamcmd \
   +runscript /game/params.txt
+
+
+EXPOSE 10999 10888
+VOLUME ["/game/DoNotStarveTogether/Cluster_1/Master/save"]
+VOLUME ["/game/DoNotStarveTogether/Cluster_1/Caves/save"]
+
+ADD rootfs /
+
+
+

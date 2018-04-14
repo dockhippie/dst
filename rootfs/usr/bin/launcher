@@ -1,8 +1,14 @@
 #!/bin/bash
+run_shared=(steam)
+run_shared+=(./dontstarve_dedicated_server_nullrenderer)
+run_shared+=(-console)
+run_shared+=(-persistent_storage_root /game)
+run_shared+=(-conf_dir DoNotStarveTogether) 
+run_shared+=(-cluster Cluster_1) 
+
+
 
 pushd /game/bin > /dev/null
-  exec su-exec steam ./dontstarve_dedicated_server_nullrenderer \
-    -console \
-    -persistent_storage_root /game \
-    -conf_dir server $@
+  exec su-exec "${run_shared[@]}" -shard Caves | sed 's/^/Caves:  /' $@ &
+  exec su-exec "${run_shared[@]}" -shard Master  | sed 's/^/Master: /' $@
 popd > /dev/null

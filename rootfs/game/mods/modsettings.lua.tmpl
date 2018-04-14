@@ -1,9 +1,0 @@
-{{ if ne (envString "FORCE_MODS") "" }}
-  {{ range (split (envString "FORCE_MODS") ",") }}
-    ForceEnableMod("{{.}}")
-  {{ end }}
-{{ end }}
-
-{{ if (envBool "DEBUG_MODS") }}
-  EnableModDebugPrint()
-{{ end }}
