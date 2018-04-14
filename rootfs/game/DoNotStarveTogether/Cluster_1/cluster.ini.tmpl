@@ -6,7 +6,7 @@ pause_when_empty = {{ envBool "PAUSE_WHEN_EMPTY" }}
 vote_enabled = {{ envBool "VOTE_ENABLED" }}
 
 [NETWORK]
-DST_LAN_ONLY_CLUSTER ={{ envBool "DST_LAN_ONLY_CLUSTER" }}
+lan_only_cluster ={{ envBool "DST_LAN_ONLY_CLUSTER" }}
 offline_cluster = {{ envBool "OFFLINE_SERVER" }}
 cluster_description = {{ envString "SERVER_DESC" }}
 cluster_name = {{ envString "SERVER_NAME" }}

@@ -12,7 +12,8 @@ These are docker images for [Don't Starve Together](https://www.kleientertainmen
 
 ## Volumes
 
-* /game/server/save
+* /game/DoNotStarveTogether/Cluster_1/Master/save
+* /game/DoNotStarveTogether/Cluster_1/Caves/save
 
 
 ## Ports
@@ -49,7 +50,6 @@ ENV DST_STEAM_AUTH_PORT 8766
 ENV DST_STEAM_MASTER_PORT 27016
 ENV DST_GENERAL_MODS # List of mod IDs, comma-separated
 ENV DST_COLLECTION_MODS # List of mod IDs, comma-separated
-ENV DST_MOD_CONFIG # Path to mod override, optional
 ENV DST_WORLDGEN_CONFIG # Path to worldgen override, optional
 ```
 For more ENV please go to github rootfs/etc/entrypoint.d/1-game

@@ -13,46 +13,32 @@ checker() {
 /usr/bin/steamcmd +runscript \
   /game/params.txt
 
-if [[ -n "${DST_MOD_CONFIG}" && -f "${DST_MOD_CONFIG}" ]]
-then
-  echo -n "Copy mod overrides... "
-  cp ${DST_MOD_CONFIG} \
-    /game/server/modoverrides.lua
-  checker $?
-else
-  echo -n "Writing mod overrides... "
-  /usr/bin/templater -d -p dst \
-    -o /game/server/modoverrides.lua \
-    /game/server/modoverrides.lua.tmpl
-  checker $?
-fi
-
 if [[ -n "${DST_WORLDGEN_CONFIG}" && -f "${DST_WORLDGEN_CONFIG}" ]]
 then
   echo -n "Copy worldgen overrides... "
   cp ${DST_WORLDGEN_CONFIG} \
-    /game/server/worldgenoverride.lua
+    /game/DoNotStarveTogether/Cluster_1/Master/worldgenoverride.lua
   checker $?
 else
   echo -n "Writing worldgen overrides... "
   /usr/bin/templater -d -p dst \
-    -o /game/Master/worldgenoverride.lua \
-    /game/Master/worldgenoverride.lua.tmpl
+    -o /game/DoNotStarveTogether/Cluster_1/Master/worldgenoverride.lua \
+    /game/DoNotStarveTogether/Cluster_1/Master/worldgenoverride.lua.tmpl
   checker $?
 fi
 
 echo -n "Writing Cluster ini... "
 /usr/bin/templater -d -p dst \
-  -o /game/cluster.ini \
-  /game/cluster.ini.tmpl
+  -o /game/DoNotStarveTogether/Cluster_1/cluster.ini \
+  /game/DoNotStarveTogether/Cluster_1/cluster.ini.tmpl
 checker $?
 
 echo -n "Writing mod setup... "
 /usr/bin/templater -d -p dst \
-  -o /game/dedicated_server_mods_setup.lua \
-  /game/dedicated_server_mods_setup.lua.tmpl  
+  -o /game/DoNotStarveTogether/Cluster_1/dedicated_server_mods_setup.lua \
+  /game/DoNotStarveTogether/Cluster_1/dedicated_server_mods_setup.lua.tmpl  
 checker $?
 
 echo -n "Writing Cluster_Token..."
-cat DST_CLUSTER_TOKEN > /game/cluster_token.txt
+echo ${DST_CLUSTER_TOKEN} > /game/DoNotStarveTogether/Cluster_1/cluster_token.txt
 checker $?
