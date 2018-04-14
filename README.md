@@ -24,7 +24,7 @@ These are docker images for [Don't Starve Together](https://www.kleientertainmen
 ## Available environment variables
 
 ```bash
-ENV DST_SERVER_TOKEN # Required
+ENV DST_CLUSTER_TOKEN #required 
 ENV DST_SERVER_NAME Don't Starve Together
 ENV DST_SERVER_DESC We have caves!
 ENV DST_SERVER_PORT 10998
@@ -33,34 +33,26 @@ ENV DST_SERVER_PASSWORD # Required
 ENV DST_GAME_MODE endless
 ENV DST_MAX_PLAYERS 10
 ENV DST_TICK_RATE 30
-ENV DST_CONNECTION_TIMEOUT 10000
+ENV DST_LAN_ONLY_CLUSTER true
 ENV DST_SERVER_SAVE_SLOT 1
 ENV DST_WHITELIST_SLOT 5
 ENV DST_PVP false
 ENV DST_PAUSE_WHEN_EMPTY true
-ENV DST_ENABLE_SNAPSHOTS true
-ENV DST_ENABLE_AUTOSAVER true
-ENV DST_ENABLE_VOTE_KICK true
+ENV MAX_SNAPSHOTS 6
+ENV DST_AUTOSAVER_ENABLED true
+ENV DST_VOTE_ENABLED true
 ENV DST_OFFLINE_SERVER false
-ENV DST_SHARD_ENABLE true
-ENV DST_SHARD_NAME $hostname
 ENV DST_SHARD_ID
-ENV DST_CLUSTER_KEY # Required
 ENV DST_PRESET
-ENV DST_MASTER true
-ENV DST_MASTER_IP 127.0.0.1
-ENV DST_MASTER_PORT 10888
 ENV DST_STEAM_DISABLE_CLOUD true
 ENV DST_STEAM_AUTH_PORT 8766
 ENV DST_STEAM_MASTER_PORT 27016
 ENV DST_GENERAL_MODS # List of mod IDs, comma-separated
 ENV DST_COLLECTION_MODS # List of mod IDs, comma-separated
-ENV DST_FORCE_MODS # List of mod IDs, comma-separated
-ENV DST_DEBUG_MODS false
 ENV DST_MOD_CONFIG # Path to mod override, optional
 ENV DST_WORLDGEN_CONFIG # Path to worldgen override, optional
 ```
-
+For more ENV please go to github rootfs/etc/entrypoint.d/1-game
 
 ## Inherited environment variables
 

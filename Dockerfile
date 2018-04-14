@@ -12,7 +12,8 @@ RUN apt-get update && \
     clean
 
 EXPOSE 10999 10888
-VOLUME ["/game/server/save"]
+VOLUME ["/game/Master/save"]
+VOLUME ["/game/Caves/save"]
 ADD rootfs /
 
 RUN chown -R steam:steam \

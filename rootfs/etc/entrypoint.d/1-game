@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -x DST_SERVER_TOKEN
+declare -x DST_CLUSTER_TOKEN
 declare -x DST_SERVER_NAME
 declare -x DST_SERVER_DESC
 declare -x DST_SERVER_PORT
@@ -9,29 +9,22 @@ declare -x DST_SERVER_PASSWORD
 declare -x DST_GAME_MODE
 declare -x DST_MAX_PLAYERS
 declare -x DST_TICK_RATE
-declare -x DST_CONNECTION_TIMEOUT
+declare -x DST_LAN_ONLY_CLUSTER
 declare -x DST_SERVER_SAVE_SLOT
 declare -x DST_WHITELIST_SLOT
 declare -x DST_PVP
 declare -x DST_PAUSE_WHEN_EMPTY
-declare -x DST_ENABLE_SNAPSHOTS
-declare -x DST_ENABLE_AUTOSAVER
-declare -x DST_ENABLE_VOTE_KICK
+declare -x MAX_SNAPSHOTS
+declare -x DST_AUTOSAVER_ENABLED
+declare -x DST_VOTE_ENABLED
 declare -x DST_OFFLINE_SERVER
-declare -x DST_SHARD_ENABLE
-declare -x DST_SHARD_NAME
 declare -x DST_SHARD_ID
-declare -x DST_CLUSTER_KEY
 declare -x DST_PRESET
-declare -x DST_MASTER
-declare -x DST_MASTER_IP
-declare -x DST_MASTER_PORT
 declare -x DST_GENERAL_MODS
 declare -x DST_COLLECTION_MODS
-declare -x DST_FORCE_MODS
-declare -x DST_DEBUG_MODS
 declare -x DST_MOD_CONFIG
 declare -x DST_WORLDGEN_CONFIG
+
 declare -x DST_ANIMALS_ALTERNATEHUNT
 declare -x DST_ANIMALS_ANGRYBEES
 declare -x DST_ANIMALS_BEEFALO
@@ -105,21 +98,17 @@ declare -x DST_UNPREPARED_ADDITIONAL
 [[ -z "${DST_GAME_MODE}" ]] && DST_GAME_MODE="endless"
 [[ -z "${DST_MAX_PLAYERS}" ]] && DST_MAX_PLAYERS="10"
 [[ -z "${DST_TICK_RATE}" ]] && DST_TICK_RATE="30"
-[[ -z "${DST_CONNECTION_TIMEOUT}" ]] && DST_CONNECTION_TIMEOUT="10000"
+[[ -z "${DST_LAN_ONLY_CLUSTER}" ]] && DST_LAN_ONLY_CLUSTER="true"
 [[ -z "${DST_SERVER_SAVE_SLOT}" ]] && DST_SERVER_SAVE_SLOT="1"
 [[ -z "${DST_WHITELIST_SLOT}" ]] && DST_WHITELIST_SLOT="5"
 [[ -z "${DST_PVP}" ]] && DST_PVP="false"
 [[ -z "${DST_PAUSE_WHEN_EMPTY}" ]] && DST_PAUSE_WHEN_EMPTY="true"
-[[ -z "${DST_ENABLE_SNAPSHOTS}" ]] && DST_ENABLE_SNAPSHOTS="true"
-[[ -z "${DST_ENABLE_AUTOSAVER}" ]] && DST_ENABLE_AUTOSAVER="true"
-[[ -z "${DST_ENABLE_VOTE_KICK}" ]] && DST_ENABLE_VOTE_KICK="true"
+[[ -z "${MAX_SNAPSHOTS}" ]] && MAX_SNAPSHOTS="6"
+[[ -z "${DST_AUTOSAVER_ENABLED}" ]] && DST_AUTOSAVER_ENABLED="true"
+[[ -z "${DST_VOTE_ENABLED}" ]] && DST_VOTE_ENABLED="true"
 [[ -z "${DST_OFFLINE_SERVER}" ]] && DST_OFFLINE_SERVER="false"
-[[ -z "${DST_SHARD_ENABLE}" ]] && DST_SHARD_ENABLE="true"
-[[ -z "${DST_SHARD_NAME}" ]] && DST_SHARD_NAME=$(hostname -s)
-[[ -z "${DST_MASTER}" ]] && DST_MASTER="true"
-[[ -z "${DST_MASTER_IP}" ]] && DST_MASTER_IP="127.0.0.1"
-[[ -z "${DST_MASTER_PORT}" ]] && DST_MASTER_PORT="10888"
-[[ -z "${DST_DEBUG_MODS}" ]] && DST_DEBUG_MODS="false"
+
+
 [[ -z "${DST_ANIMALS_ALTERNATEHUNT}" ]] && DST_ANIMALS_ALTERNATEHUNT="default"
 [[ -z "${DST_ANIMALS_BEEFALO}" ]] && DST_ANIMALS_BEEFALO="default"
 [[ -z "${DST_ANIMALS_BEEFALOHEAT}" ]] && DST_ANIMALS_BEEFALOHEAT="default"

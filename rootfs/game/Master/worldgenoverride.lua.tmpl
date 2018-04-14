@@ -1,8 +1,8 @@
 return {
   override_enabled = true,
 
-  {{ if (envIsSet "PRESET") }}
-    preset = "{{ envString "PRESET" }}",
+  {{ if (envIsSet "DST_PRESET") }}
+    preset = "{{ envString "DST_PRESET" }}",
   {{ end }}
 
   animals = {
