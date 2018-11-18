@@ -1,11 +1,11 @@
 {{ if ne (envString "GENERAL_MODS") "" }}
   {{ range (split (envString "GENERAL_MODS") ",") }}
-    ServerModSetup("{{.}}")
+ServerModSetup("{{.}}")
   {{ end }}
 {{ end }}
 
 {{ if ne (envString "COLLECTION_MODS") "" }}
   {{ range (split (envString "COLLECTION_MODS") ",") }}
-    ServerModCollectionSetup("{{.}}")
+ServerModCollectionSetup("{{.}}")
   {{ end }}
 {{ end }}
