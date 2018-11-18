@@ -39,6 +39,12 @@ echo -n "Writing mod setup... "
   /game/mods/dedicated_server_mods_setup.lua.tmpl
 checker $?
 
+echo -n "Writing mod settings... "
+/usr/bin/templater -d -p dst \
+  -o /game/mods/modsettings.lua \
+  /game/mods/modsettings.lua.tmpl
+checker $?
+
 echo -n "Writing Cluster_Token..."
 echo ${DST_CLUSTER_TOKEN} > /game/DoNotStarveTogether/Cluster_1/cluster_token.txt
 checker $?

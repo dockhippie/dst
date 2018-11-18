@@ -1,0 +1,5 @@
+{{ if ne (envString "GENERAL_MODS") "" }}
+  {{ range (split (envString "GENERAL_MODS") ",") }}
+ForceEnableMod("workshop-{{.}}")
+  {{ end }}
+{{ end }}
