@@ -17,7 +17,7 @@ tick_rate = {{ envInt "TICK_RATE" }}
 whitelist_slots = {{ envInt "WHITELIST_SLOTS" }}
 
 [MISC]
-console_enabled = true
+console_enabled = {{ envBool "CONSOLE_ENABLED" }}
 max_snapshots = {{ envInt "MAX_SNAPSHOTS" }}
 
 
