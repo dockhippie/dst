@@ -8,6 +8,7 @@ declare -x DST_SERVER_INTENTION
 declare -x DST_SERVER_PASSWORD
 declare -x DST_GAME_MODE
 declare -x DST_MAX_PLAYERS
+declare -x DST_SHARD_ENABLE
 declare -x DST_TICK_RATE
 declare -x DST_LAN_ONLY_CLUSTER
 declare -x DST_SERVER_SAVE_SLOT
@@ -95,6 +96,7 @@ declare -x DST_UNPREPARED_ADDITIONAL
 [[ -z "${DST_SERVER_INTENTION}" ]] && DST_SERVER_INTENTION="cooperative"
 [[ -z "${DST_GAME_MODE}" ]] && DST_GAME_MODE="endless"
 [[ -z "${DST_MAX_PLAYERS}" ]] && DST_MAX_PLAYERS="10"
+[[ -z "${DST_SHARD_ENABLE}" ]] && DST_SHARD_ENABLE="true"
 [[ -z "${DST_TICK_RATE}" ]] && DST_TICK_RATE="30"
 [[ -z "${DST_LAN_ONLY_CLUSTER}" ]] && DST_LAN_ONLY_CLUSTER="true"
 [[ -z "${DST_SERVER_SAVE_SLOT}" ]] && DST_SERVER_SAVE_SLOT="1"
