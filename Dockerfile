@@ -1,5 +1,5 @@
 FROM webhippie/steamcmd:latest
-MAINTAINER Thomas Boerger <thomas@webhippie.de>
+MAINTAINER Mikhalev Ruslan <mikhalev.ruslan@gmail.com>
 
 WORKDIR /game
 ENTRYPOINT ["/usr/bin/entrypoint"]

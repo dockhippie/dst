@@ -1,13 +1,13 @@
 # Don't Starve Together
 
-[![](https://images.microbadger.com/badges/image/webhippie/dst.svg)](https://microbadger.com/images/webhippie/dst "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/chest/dst.svg)](https://microbadger.com/images/chest/dst "Get your own image badge on microbadger.com")
 
 These are docker images for [Don't Starve Together](https://www.kleientertainment.com/games/dont-starve-together) running on a [SteamCMD container](https://registry.hub.docker.com/u/webhippie/steamcmd/).
 
 
 ## Versions
 
-* [latest](https://github.com/dockhippie/dst/tree/master) available as ```webhippie/dst:latest``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/dst/)
+* [latest](https://github.com/DNAlchemist/dst/tree/master) available as ```chest/dst:latest``` at [Docker Hub](https://registry.hub.docker.com/u/chest/dst/)
 
 
 ## Volumes
