@@ -1,8 +1,0 @@
-#!/bin/bash
-
-for FILE in $(find /etc/entrypoint.d -type f | sort)
-do
-  source $FILE
-done
-
-exec $@

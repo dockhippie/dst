@@ -1,0 +1,38 @@
+[GAMEPLAY]
+game_mode = {{ getenv "DST_GAMEPLAY_GAME_MODE" }}
+max_players = {{ getenv "DST_GAMEPLAY_MAX_PLAYERS" }}
+pvp = {{ getenv "DST_GAMEPLAY_PVP" }}
+pause_when_empty = {{ getenv "DST_GAMEPLAY_PAUSE_WHEN_EMPTY" }}
+vote_enabled = {{ getenv "DST_GAMEPLAY_VOTE_ENABLED" }}
+
+[NETWORK]
+lan_only_cluster = {{ getenv "DST_NETWORK_LAN_ONLY_SERVER" }}
+cluster_intention = {{ getenv "DST_NETWORK_CLUSTER_INTENTION" }}
+cluster_description = {{ getenv "DST_NETWORK_CLUSTER_DESCRIPTION" }}
+cluster_name = {{ getenv "DST_NETWORK_CLUSTER_NAME" }}
+cluster_password = {{ getenv "DST_NETWORK_CLUSTER_PASSWORD" }}
+offline_cluster = {{ getenv "DST_NETWORK_OFFLINE_CLUSTER" }}
+cluster_language = {{ getenv "DST_NETWORK_CLUSTER_LANGUAGE" }}
+tick_rate = {{ getenv "DST_NETWORK_TICK_RATE" }}
+whitelist_slots = {{ getenv "DST_NETWORK_WHITELIST_SLOTS" }}
+autosaver_enabled = {{ getenv "DST_NETWORK_AUTOSAVER_ENABLED" }}
+
+[SHARD]
+shard_enabled = {{ getenv "DST_SHARD_ENABLED" }}
+{{ if eq (getenv "DST_SHARD_ENABLED") "true" -}}
+{{ if eq (getenv "DST_SHARD_IS_MASTER") "true" -}}
+bind_ip = {{ getenv "DST_SHARD_BIND_IP" }}
+{{ else -}}
+master_ip = {{ getenv "DST_SHARD_MASTER_IP" }}
+{{ end -}}
+master_port = {{ getenv "DST_SHARD_MASTER_PORT" }}
+cluster_key = {{ getenv "DST_SHARD_CLUSTER_KEY" }}
+{{ end -}}
+
+[STEAM]
+steam_group_only = {{ getenv "DST_STEAM_GROUP_ONLY" }}
+steam_group_id = {{ getenv "DST_STEAM_GROUP_ID" }}
+steam_group_admins = {{ getenv "DST_STEAM_GROUP_ADMINS" }}
+
+[MISC]
+console_enabled = {{ getenv "DST_MISC_CONSOLE_ENABLED" }}

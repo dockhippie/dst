@@ -1,0 +1,11 @@
+{{ if ne (getenv "DST_SERVER_MOD_SETUP") "" -}}
+{{ range (split (getenv "DST_SERVER_MOD_SETUP") ",") }}
+ServerModSetup("{{ . }}")
+{{ end -}}
+{{ end -}}
+
+{{ if ne (getenv "DST_SERVER_MOD_COLLECTION_SETUP") "" }}
+{{ range (split (getenv "DST_SERVER_MOD_COLLECTION_SETUP") ",") -}}
+ServerModCollectionSetup("{{ . }}")
+{{ end -}}
+{{ end -}}

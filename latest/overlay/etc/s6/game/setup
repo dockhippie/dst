@@ -1,0 +1,164 @@
+#!/bin/bash
+
+if [ -z "${DST_CLUSTER_TOKEN}" ]
+then
+  echo >&2 "Error: You have to provide DST_CLUSTER_TOKEN environment variable"
+  /bin/s6-svscanctl -t /etc/s6
+  exit 1
+fi
+
+if [[ "${DST_SKIP_GAME_UPGRADE}" != "true" ]]
+then
+  echo "> upgrading game version"
+  steamcmd +login anonymous +force_install_dir /usr/share/game +app_update 343050 validate +quit
+fi
+
+if [[ ! -d ${DST_SERVER_DIR} ]]
+then
+  echo "> creating server dir"
+  mkdir -p ${DST_SERVER_DIR}
+fi
+
+if [[ ! -d ${DST_SHARD_DIR} ]]
+then
+  echo "> creating shard dir"
+  mkdir -p ${DST_SHARD_DIR}
+fi
+
+if [[ ! -f ${DST_CLUSTER_TOKEN_FILE} ]]
+then
+  echo "> creating cluster token"
+  echo "${DST_CLUSTER_TOKEN}" >| ${DST_CLUSTER_TOKEN_FILE}
+fi
+
+if [[ ! -f ${DST_BLOCKLIST_FILE} ]]
+then
+  echo "> creating blocklist file"
+  touch ${DST_BLOCKLIST_FILE}
+fi
+
+if [[ ! -f ${DST_ADMINLIST_FILE} ]]
+then
+  echo "> creating adminlist file"
+  touch ${DST_ADMINLIST_FILE}
+fi
+
+if [[ ! -f ${DST_WHITELIST_FILE} ]]
+then
+  echo "> creating whitelist file"
+  touch ${DST_WHITELIST_FILE}
+fi
+
+if [[ "${DST_SKIP_CLUSTER_CONFIG}" != "true" ]]
+then
+  echo "> writing cluster config"
+  /usr/bin/gomplate -V \
+    -o ${DST_CLUSTER_CONFIG_FILE} \
+    -f /etc/templates/cluster.ini.tmpl
+
+  if [[ $? -ne 0 ]]
+  then
+    echo "> writing config failed!"
+    /bin/s6-svscanctl -t /etc/s6
+    exit 1
+  fi
+else
+  echo "> skipping cluster config"
+fi
+
+if [[ "${DST_SKIP_SERVER_CONFIG}" != "true" ]]
+then
+  echo "> writing server config"
+  /usr/bin/gomplate -V \
+    -o ${DST_SERVER_CONFIG_FILE} \
+    -f /etc/templates/server.ini.tmpl
+
+  if [[ $? -ne 0 ]]
+  then
+    echo "> writing config failed!"
+    /bin/s6-svscanctl -t /etc/s6
+    exit 1
+  fi
+else
+  echo "> skipping server config"
+fi
+
+if [[ "${DST_SKIP_MOD_OVERRIDES}" != "true" ]]
+then
+  echo "> writing mod overrides"
+  /usr/bin/gomplate -V \
+    -o ${DST_MOD_OVERRIDES_FILE} \
+    -f /etc/templates/modoverrides.lua.tmpl
+
+  if [[ $? -ne 0 ]]
+  then
+    echo "> writing config failed!"
+    /bin/s6-svscanctl -t /etc/s6
+    exit 1
+  fi
+else
+  echo "> skipping mod overrides"
+fi
+
+if [[ "${DST_SKIP_LEVELDATA_OVERRIDE}" != "true" ]]
+then
+  echo "> writing leveldata override"
+  /usr/bin/gomplate -V \
+    -o ${DST_LEVELDATA_OVERRIDE_FILE} \
+    -f /etc/templates/leveldataoverride.lua.tmpl
+
+  if [[ $? -ne 0 ]]
+  then
+    echo "> writing config failed!"
+    /bin/s6-svscanctl -t /etc/s6
+    exit 1
+  fi
+else
+  echo "> skipping leveldata override"
+fi
+
+if [[ "${DST_SKIP_MOD_SETUP}" != "true" ]]
+then
+  echo "> writing mod setup"
+  /usr/bin/gomplate -V \
+    -o ${DST_MOD_SETUP_FILE} \
+    -f /etc/templates/dedicated_server_mods_setup.lua.tmpl
+
+  if [[ $? -ne 0 ]]
+  then
+    echo "> writing config failed!"
+    /bin/s6-svscanctl -t /etc/s6
+    exit 1
+  fi
+else
+  echo "> skipping server config"
+fi
+
+if [[ "${DST_SKIP_MOD_SETTINGS}" != "true" ]]
+then
+  echo "> writing mod settings"
+  /usr/bin/gomplate -V \
+    -o ${DST_MOD_SETTINGS_FILE} \
+    -f /etc/templates/modsettings.lua.tmpl
+
+  if [[ $? -ne 0 ]]
+  then
+    echo "> writing config failed!"
+    /bin/s6-svscanctl -t /etc/s6
+    exit 1
+  fi
+else
+  echo "> skipping server config"
+fi
+
+if [[ "${DST_SKIP_STATE_CHOWN}" != "true" ]]
+then
+  echo "> chown state directory"
+  find /var/lib/game \( \! -user steam -o \! -group steam \) -print0 | xargs -0 -r chown steam:steam
+fi
+
+if [[ "${DST_SKIP_GAME_CHOWN}" != "true" ]]
+then
+  echo "> chown game directory"
+  find /usr/share/game \( \! -user steam -o \! -group steam \) -print0 | xargs -0 -r chown steam:steam
+fi

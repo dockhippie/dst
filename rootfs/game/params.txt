@@ -1,5 +1,0 @@
-login anonymous
-
-force_install_dir /game
-app_update 343050 -beta cavesbeta validate
-quit

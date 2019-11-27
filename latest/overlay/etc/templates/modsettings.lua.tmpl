@@ -1,0 +1,13 @@
+{{ if ne (getenv "DST_FORCE_ENABLE_MODS") "" -}}
+{{ range (split (getenv "DST_FORCE_ENABLE_MODS") ",") }}
+ForceEnableMod("{{ . }}")
+{{ end -}}
+{{ end -}}
+
+{{ if eq (getenv "DST_ENABLE_MOD_ERROR") "true" -}}
+EnableModError()
+{{ end -}}
+
+{{ if eq (getenv "DST_ENABLE_MOD_DEBUG_PRINT") "true" -}}
+EnableModDebugPrint()
+{{ end -}}

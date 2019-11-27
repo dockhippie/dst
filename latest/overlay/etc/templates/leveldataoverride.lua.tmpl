@@ -1,0 +1,315 @@
+return {
+  background_node_range={ {{ getenv "DST_OVERRIDE_BACKGROUND_NODE_RANGE" }} },
+  desc="{{ getenv "DST_OVERRIDE_DESC" }}",
+  hideminimap={{ getenv "DST_OVERRIDE_HIDEMINIMAP" }},
+  id="{{ getenv "DST_OVERRIDE_ID" }}",
+  location="{{ getenv "DST_OVERRIDE_LOCATION" }}",
+  max_playlist_position={{ getenv "DST_OVERRIDE_MAX_PLAYER_POSITION" }},
+  min_playlist_position={{ getenv "DST_OVERRIDE_MIN_PLAYER_POSITION" }},
+  name="{{ getenv "DST_OVERRIDE_NAME" }}",
+  numrandom_set_pieces={{ getenv "DST_OVERRIDE_NUMRANDOM_SET_PIECES" }},
+  override_level_string={{ getenv "DST_OVERRIDE_LEVEL_STRING" }},
+
+  overrides={
+{{ if ne (getenv "DST_OVERRIDE_ALTERNATEHUNT") "" -}}
+    alternatehunt="{{ getenv "DST_OVERRIDE_ALTERNATEHUNT" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_ANGRYBEES") "" -}}
+    angrybees="{{ getenv "DST_OVERRIDE_ANGRYBEES" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_ANTLIONTRIBUTE") "" -}}
+    antliontribute="{{ getenv "DST_OVERRIDE_ANTLIONTRIBUTE" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_AUTUMN") "" -}}
+    autumn="{{ getenv "DST_OVERRIDE_AUTUMN" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BANANA") "" -}}
+    banana="{{ getenv "DST_OVERRIDE_BANANA" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BATS") "" -}}
+    bats="{{ getenv "DST_OVERRIDE_BATS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BEARGER") "" -}}
+    bearger="{{ getenv "DST_OVERRIDE_BEARGER" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BEEFALO") "" -}}
+    beefalo="{{ getenv "DST_OVERRIDE_BEEFALO" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BEEFALOHEAT") "" -}}
+    beefaloheat="{{ getenv "DST_OVERRIDE_BEEFALOHEAT" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BEES") "" -}}
+    bees="{{ getenv "DST_OVERRIDE_BEES" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BERRYBUSH") "" -}}
+    berrybush="{{ getenv "DST_OVERRIDE_BERRYBUSH" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BIRDS") "" -}}
+    birds="{{ getenv "DST_OVERRIDE_BIRDS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BOONS") "" -}}
+    boons="{{ getenv "DST_OVERRIDE_BOONS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BRANCHING") "" -}}
+    branching="{{ getenv "DST_OVERRIDE_BRANCHING" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BUNNYMEN") "" -}}
+    bunnymen="{{ getenv "DST_OVERRIDE_BUNNYMEN" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BUTTERFLY") "" -}}
+    butterfly="{{ getenv "DST_OVERRIDE_BUTTERFLY" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_BUZZARD") "" -}}
+    buzzard="{{ getenv "DST_OVERRIDE_BUZZARD" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_CACTUS") "" -}}
+    cactus="{{ getenv "DST_OVERRIDE_CACTUS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_CARROT") "" -}}
+    carrot="{{ getenv "DST_OVERRIDE_CARROT" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_CATCOON") "" -}}
+    catcoon="{{ getenv "DST_OVERRIDE_CATCOON" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_CAVE_PONDS") "" -}}
+    cave_ponds="{{ getenv "DST_OVERRIDE_CAVE_PONDS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_CAVE_SPIDERS") "" -}}
+    cave_spiders="{{ getenv "DST_OVERRIDE_CAVE_SPIDERS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_CAVELIGHT") "" -}}
+    cavelight="{{ getenv "DST_OVERRIDE_CAVELIGHT" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_CHESS") "" -}}
+    chess="{{ getenv "DST_OVERRIDE_CHESS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_DAY") "" -}}
+    day="{{ getenv "DST_OVERRIDE_DAY" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_DECIDUOUSMONSTER") "" -}}
+    deciduousmonster="{{ getenv "DST_OVERRIDE_DECIDUOUSMONSTER" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_DEERCLOPS") "" -}}
+    deerclops="{{ getenv "DST_OVERRIDE_DEERCLOPS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_DISEASE_DELAY") "" -}}
+    disease_delay="{{ getenv "DST_OVERRIDE_DISEASE_DELAY" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_DRAGONFLY") "" -}}
+    dragonfly="{{ getenv "DST_OVERRIDE_DRAGONFLY" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_EARTHQUAKES") "" -}}
+    earthquakes="{{ getenv "DST_OVERRIDE_EARTHQUAKES" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_FERN") "" -}}
+    fern="{{ getenv "DST_OVERRIDE_FERN" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_FISSURE") "" -}}
+    fissure="{{ getenv "DST_OVERRIDE_FISSURE" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_FLINT") "" -}}
+    flint="{{ getenv "DST_OVERRIDE_FLINT" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_FLOWERS") "" -}}
+    flowers="{{ getenv "DST_OVERRIDE_FLOWERS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_FLOWER_CAVE") "" -}}
+    flower_cave="{{ getenv "DST_OVERRIDE_FLOWER_CAVE" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_FROGRAIN") "" -}}
+    frograin="{{ getenv "DST_OVERRIDE_FROGRAIN" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_GOOSEMOOSE") "" -}}
+    goosemoose="{{ getenv "DST_OVERRIDE_GOOSEMOOSE" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_GRASS") "" -}}
+    grass="{{ getenv "DST_OVERRIDE_GRASS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_HAS_OCEAN") "" -}}
+    has_ocean={{ getenv "DST_OVERRIDE_HAS_OCEAN" }},
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_HOUNDMOUND") "" -}}
+    houndmound="{{ getenv "DST_OVERRIDE_HOUNDMOUND" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_HOUNDS") "" -}}
+    hounds="{{ getenv "DST_OVERRIDE_HOUNDS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_HUNT") "" -}}
+    hunt="{{ getenv "DST_OVERRIDE_HUNT" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_KEEP_DISCONNECTED_TILES") "" -}}
+    keep_disconnected_tiles={{ getenv "DST_OVERRIDE_KEEP_DISCONNECTED_TILES" }},
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_KRAMPUS") "" -}}
+    krampus="{{ getenv "DST_OVERRIDE_KRAMPUS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_LAYOUT_MODE") "" -}}
+    layout_mode="{{ getenv "DST_OVERRIDE_LAYOUT_MODE" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_LICHEN") "" -}}
+    lichen="{{ getenv "DST_OVERRIDE_LICHEN" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_LIEFS") "" -}}
+    liefs="{{ getenv "DST_OVERRIDE_LIEFS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_LIGHTNING") "" -}}
+    lightning="{{ getenv "DST_OVERRIDE_LIGHTNING" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_LIGHTNINGGOAT") "" -}}
+    lightninggoat="{{ getenv "DST_OVERRIDE_LIGHTNINGGOAT" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_LOOP") "" -}}
+    loop="{{ getenv "DST_OVERRIDE_LOOP" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_LUREPLANTS") "" -}}
+    lureplants="{{ getenv "DST_OVERRIDE_LUREPLANTS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_MARSHBUSH") "" -}}
+    marshbush="{{ getenv "DST_OVERRIDE_MARSHBUSH" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_MERM") "" -}}
+    merm="{{ getenv "DST_OVERRIDE_MERM" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_METEORSHOWERS") "" -}}
+    meteorshowers="{{ getenv "DST_OVERRIDE_METEORSHOWERS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_METEORSPAWNER") "" -}}
+    meteorspawner="{{ getenv "DST_OVERRIDE_METEORSPAWNER" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_MOLES") "" -}}
+    moles="{{ getenv "DST_OVERRIDE_MOLES" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_MONKEY") "" -}}
+    monkey="{{ getenv "DST_OVERRIDE_MONKEY" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_MUSHROOM") "" -}}
+    mushroom="{{ getenv "DST_OVERRIDE_MUSHROOM" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_MUSHTREE") "" -}}
+    mushtree="{{ getenv "DST_OVERRIDE_MUSHTREE" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_NO_JOINING_ISLANDS") "" -}}
+    no_joining_islands={{ getenv "DST_OVERRIDE_NO_JOINING_ISLANDS" }},
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_NO_WORMHOLES_TO_DISCONNECTED_TILES") "" -}}
+    no_wormholes_to_disconnected_tiles={{ getenv "DST_OVERRIDE_NO_WORMHOLES_TO_DISCONNECTED_TILES" }},
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_PENGUINS") "" -}}
+    penguins="{{ getenv "DST_OVERRIDE_PENGUINS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_PERD") "" -}}
+    perd="{{ getenv "DST_OVERRIDE_PERD" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_PETRIFICATION") "" -}}
+    petrification="{{ getenv "DST_OVERRIDE_PETRIFICATION" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_PIGS") "" -}}
+    pigs="{{ getenv "DST_OVERRIDE_PIGS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_PONDS") "" -}}
+    ponds="{{ getenv "DST_OVERRIDE_PONDS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_PREFABSWAPS_START") "" -}}
+    prefabswaps_start="{{ getenv "DST_OVERRIDE_PREFABSWAPS_START" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_RABBITS") "" -}}
+    rabbits="{{ getenv "DST_OVERRIDE_RABBITS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_REEDS") "" -}}
+    reeds="{{ getenv "DST_OVERRIDE_REEDS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_REGROWTH") "" -}}
+    regrowth="{{ getenv "DST_OVERRIDE_REGROWTH" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_ROADS") "" -}}
+    roads="{{ getenv "DST_OVERRIDE_ROADS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_ROCK") "" -}}
+    rock="{{ getenv "DST_OVERRIDE_ROCK" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_ROCKY") "" -}}
+    rocky="{{ getenv "DST_OVERRIDE_ROCKY" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_ROCK_ICE") "" -}}
+    rock_ice="{{ getenv "DST_OVERRIDE_ROCK_ICE" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_SAPLING") "" -}}
+    sapling="{{ getenv "DST_OVERRIDE_SAPLING" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_SEASON_START") "" -}}
+    season_start="{{ getenv "DST_OVERRIDE_SEASON_START" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_SLURPER") "" -}}
+    slurper="{{ getenv "DST_OVERRIDE_SLURPER" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_SLURTLES") "" -}}
+    slurtles="{{ getenv "DST_OVERRIDE_SLURTLES" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_SPECIALEVENT") "" -}}
+    specialevent="{{ getenv "DST_OVERRIDE_SPECIALEVENT" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_SPIDERS") "" -}}
+    spiders="{{ getenv "DST_OVERRIDE_SPIDERS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_SPRING") "" -}}
+    spring="{{ getenv "DST_OVERRIDE_SPRING" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_START_LOCATION") "" -}}
+    start_location="{{ getenv "DST_OVERRIDE_START_LOCATION" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_SUMMER") "" -}}
+    summer="{{ getenv "DST_OVERRIDE_SUMMER" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_TALLBIRDS") "" -}}
+    tallbirds="{{ getenv "DST_OVERRIDE_TALLBIRDS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_TASK_SET") "" -}}
+    task_set="{{ getenv "DST_OVERRIDE_TASK_SET" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_TENTACLES") "" -}}
+    tentacles="{{ getenv "DST_OVERRIDE_TENTACLES" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_TOUCHSTONE") "" -}}
+    touchstone="{{ getenv "DST_OVERRIDE_TOUCHSTONE" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_TREES") "" -}}
+    trees="{{ getenv "DST_OVERRIDE_TREES" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_TUMBLEWEED") "" -}}
+    tumbleweed="{{ getenv "DST_OVERRIDE_TUMBLEWEED" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_WALRUS") "" -}}
+    walrus="{{ getenv "DST_OVERRIDE_WALRUS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_WEATHER") "" -}}
+    weather="{{ getenv "DST_OVERRIDE_WEATHER" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_WILDFIRES") "" -}}
+    wildfires="{{ getenv "DST_OVERRIDE_WILDFIRES" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_WINTER") "" -}}
+    winter="{{ getenv "DST_OVERRIDE_WINTER" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_WORLD_SIZE") "" -}}
+    world_size="{{ getenv "DST_OVERRIDE_WORLD_SIZE" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_WORMATTACKS") "" -}}
+    wormattacks="{{ getenv "DST_OVERRIDE_WORMATTACKS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_WORMLIGHTS") "" -}}
+    wormlights="{{ getenv "DST_OVERRIDE_WORMLIGHTS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_WORMS") "" -}}
+    worms="{{ getenv "DST_OVERRIDE_WORMS" }}",
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_WORMHOLE_PREFAB") "" -}}
+    wormhole_prefab="{{ getenv "DST_OVERRIDE_WORMHOLE_PREFAB" }}"
+{{ end -}}
+  },
+
+  random_set_pieces={ {{ if ne (getenv "DST_OVERRIDE_RANDOM_SET_PIECES") "" }}'{{ $vals := split (getenv "DST_OVERRIDE_RANDOM_SET_PIECES") "," }}{{ join $vals "', '" }}'{{ end }} },
+  required_prefabs={ {{ if ne (getenv "DST_OVERRIDE_REQUIRED_PREFABS") "" }}'{{ $vals := split (getenv "DST_OVERRIDE_REQUIRED_PREFABS") "," }}{{ join $vals "', '" }}'{{ end }} },
+  required_setpieces={ {{ if ne (getenv "DST_OVERRIDE_REQUIRED_SETPIECES") "" }}'{{ $vals := split (getenv "DST_OVERRIDE_REQUIRED_SETPIECES") "," }}{{ join $vals "', '" }}'{{ end }} },
+  substitutes={ {{ if ne (getenv "DST_OVERRIDE_SUBSTITUTES") "" }}'{{ $vals := split (getenv "DST_OVERRIDE_SUBSTITUTES") "," }}{{ join $vals "', '" }}'{{ end }} },
+  version={{ getenv "DST_OVERRIDE_VERSION" }}
+}

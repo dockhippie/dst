@@ -1,0 +1,15 @@
+return {
+{{ if ne (getenv "DST_SERVER_MOD_SETUP") "" }}
+  {{ range $i, $mod := (split (getenv "DST_SERVER_MOD_SETUP") ",") }}{{ if gt $i 0 }},{{ end }}
+  ["workshop-{{ $mod }}"] = {
+    enabled = true,
+    configuration_options = { {{ if ne (getenv (print "DST_WORKSHOP_" $mod)) "" }}
+      {{ getenv (print "DST_WORKSHOP_" $mod) }}
+    {{ end }} }
+  }{{ end }}
+{{ end }}
+
+{{ if ne (getenv "DST_MOD_OVERRIDES") "" }}
+  {{ getenv "DST_MOD_OVERRIDES" }}
+{{ end }}
+}
