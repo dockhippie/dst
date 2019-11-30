@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-declare -x DST_MOD_OVERRIDES
-[[ -z "${DST_MOD_OVERRIDES}" ]] && DST_MOD_OVERRIDES=""
+declare -x DST_MOD_OVERRIDES_RAW
+[[ -z "${DST_MOD_OVERRIDES_RAW}" ]] && DST_MOD_OVERRIDES_RAW=""
 
 declare -x DST_SERVER_MOD_SETUP
 [[ -z "${DST_SERVER_MOD_SETUP}" ]] && DST_SERVER_MOD_SETUP=""

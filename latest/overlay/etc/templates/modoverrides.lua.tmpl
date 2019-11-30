@@ -9,7 +9,7 @@ return {
   }{{ end }}
 {{ end }}
 
-{{ if ne (getenv "DST_MOD_OVERRIDES") "" }}
-  {{ getenv "DST_MOD_OVERRIDES" }}
+{{ if ne (getenv "DST_MOD_OVERRIDES_RAW") "" }}
+  {{ getenv "DST_MOD_OVERRIDES_RAW" }}
 {{ end }}
 }
