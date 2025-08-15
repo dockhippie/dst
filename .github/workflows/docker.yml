@@ -88,38 +88,6 @@ jobs:
             quay.io/webhippie/dst:latest-amd64
             ghcr.io/dockhippie/dst:latest-amd64
 
-      - name: Build arm64
-        id: arm64
-        uses: docker/build-push-action@v6
-        with:
-          builder: ${{ steps.buildx.outputs.name }}
-          context: latest/
-          provenance: false
-          file: latest/Dockerfile.arm64
-          platforms: linux/arm64
-          push: ${{ github.event_name != 'pull_request' }}
-          labels: ${{ steps.meta.outputs.labels }}
-          tags: |
-            webhippie/dst:latest-arm64
-            quay.io/webhippie/dst:latest-arm64
-            ghcr.io/dockhippie/dst:latest-arm64
-
-      - name: Build arm
-        id: arm
-        uses: docker/build-push-action@v6
-        with:
-          builder: ${{ steps.buildx.outputs.name }}
-          context: latest/
-          provenance: false
-          file: latest/Dockerfile.arm
-          platforms: linux/arm/v6
-          push: ${{ github.event_name != 'pull_request' }}
-          labels: ${{ steps.meta.outputs.labels }}
-          tags: |
-            webhippie/dst:latest-arm
-            quay.io/webhippie/dst:latest-arm
-            ghcr.io/dockhippie/dst:latest-arm
-
       - name: Hub manifest
         id: manifest1
         uses: actionhippie/manifest@v1
