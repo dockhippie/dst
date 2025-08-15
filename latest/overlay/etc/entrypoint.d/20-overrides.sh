@@ -427,7 +427,7 @@ case "${DST_OVERRIDE_PRESET}" in
     DST_OVERRIDE_WILDFIRES="default"
     DST_OVERRIDE_WINTER="default"
     DST_OVERRIDE_WORLD_SIZE="default"
-    DST_OVERRIDE_WORMHOLE_PREFAB="workhole"
+    DST_OVERRIDE_WORMHOLE_PREFAB="wormhole"
     ;;
 
   "Caves")
