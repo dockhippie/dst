@@ -1,25 +1,20 @@
-FROM webhippie/steamcmd:latest-amd64
+FROM ghcr.io/dockhippie/steamcmd:latest-amd64
 
-LABEL maintainer="Thomas Boerger <thomas@webhippie.de>" \
-  org.label-schema.name="Don't Starve Together" \
-  org.label-schema.version="latest" \
-  org.label-schema.vendor="Thomas Boerger" \
-  org.label-schema.schema-version="1.0"
-
+VOLUME ["/var/lib/game", "/var/log/steam"]
 EXPOSE 10999 27017 8767
 
 WORKDIR /var/lib/game
-ENTRYPOINT ["/usr/bin/entrypoint"]
-CMD ["/bin/s6-svscan", "/etc/s6"]
+CMD ["/usr/bin/container"]
 
 RUN apt-get update -y && \
   apt-get upgrade -y && \
-  apt-get install -y lib32stdc++6 libcurl4-gnutls-dev:i386 && \
+  apt-get install -y libstdc++6:i386 libgcc1:i386 libcurl4-gnutls-dev:i386 && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /usr/share/game && \
 	chown -R steam:steam /usr/share/game && \
-	/usr/bin/steamcmd +login anonymous +force_install_dir /usr/share/game +app_update 343050 validate +quit
+	/usr/bin/steamcmd +login anonymous +force_install_dir /usr/share/game +app_update 343050 validate +quit && \
+  rm -rf /var/log/steam/*
 
-COPY ./overlay ./overlay-amd64 /
+COPY ./overlay /
