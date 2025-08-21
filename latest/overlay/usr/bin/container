@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -eo pipefail
+source /usr/bin/entrypoint
+
+if [ -z "${DST_CLUSTER_TOKEN}" ]; then
+    echo >&2 "Error: You have to provide DST_CLUSTER_TOKEN environment variable"
+    exit 1
+fi
+
+for FILE in $(find /etc/container.d -type f -iname \*.sh | sort); do
+    source ${FILE}
+done
+
+pushd /usr/share/game/bin >/dev/null
+    STARTCMD="su-exec steam ./dontstarve_dedicated_server_nullrenderer -console"
+
+    if [ -n "${DST_SERVER_PERSISTENT_STORAGE_ROOT}" ]; then
+        STARTCMD="${STARTCMD} -persistent_storage_root ${DST_SERVER_PERSISTENT_STORAGE_ROOT}"
+    fi
+
+    if [ -n "${DST_SERVER_CONF_DIR}" ]; then
+        STARTCMD="${STARTCMD} -conf_dir ${DST_SERVER_CONF_DIR}"
+    fi
+
+    if [ -n "${DST_SHARD_NAME}" ]; then
+        STARTCMD="${STARTCMD} -shard ${DST_SHARD_NAME}"
+    fi
+
+    if [ -n "${DST_SERVER_REGION}" ]; then
+        STARTCMD="${STARTCMD} -region ${DST_SERVER_REGION}"
+    fi
+
+    if [ -n "${DST_SERVER_CLUSTER}" ]; then
+        STARTCMD="${STARTCMD} -cluster ${DST_SERVER_CLUSTER}"
+    fi
+
+    echo "> starting dst server"
+    exec ${STARTCMD}
+popd >/dev/null

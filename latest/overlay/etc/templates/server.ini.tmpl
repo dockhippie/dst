@@ -5,13 +5,17 @@ server_port = {{ getenv "DST_NETWORK_SERVER_PORT" }}
 is_master = {{ getenv "DST_SHARD_IS_MASTER" }}
 {{ if ne (getenv "DST_SHARD_IS_MASTER") "true" -}}
 name = {{ getenv "DST_SHARD_NAME" }}
+{{ if ne (getenv "DST_SHARD_ID") "" -}}
 id =  {{ getenv "DST_SHARD_ID" }}
 {{ end -}}
+{{ end -}}
+{{ if ne (getenv "DST_ACCOUNT_ENCODE_USER_PATH") "" -}}
 
 [ACCOUNT]
 encode_user_path = {{ getenv "DST_ACCOUNT_ENCODE_USER_PATH" }}
-
+{{ end -}}
 {{ if ne (getenv "DST_SHARD_IS_MASTER") "true" -}}
+
 [STEAM]
 master_server_port = {{ getenv "DST_STEAM_MASTER_SERVER_PORT" }}
 authentication_port = {{ getenv "DST_STEAM_AUTHENTICATION_PORT" }}

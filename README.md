@@ -1,30 +1,29 @@
-# Don't Starve Together
+# dst
 
-[![Build Status](https://cloud.drone.io/api/badges/dockhippie/dst/status.svg)](https://cloud.drone.io/dockhippie/dst)
-[![](https://images.microbadger.com/badges/image/webhippie/dst.svg)](https://microbadger.com/images/webhippie/dst "Get your own image badge on microbadger.com")
+[![Docker Build](https://github.com/dockhippie/dst/actions/workflows/docker.yml/badge.svg)](https://github.com/dockhippie/dst/actions/workflows/docker.yml) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/dockhippie/dst)
 
-These are docker images for [Don't Starve Together](https://www.kleientertainment.com/games/dont-starve-together) running on an [SteamCMD container](https://registry.hub.docker.com/u/webhippie/steamcmd/).
-
+These are docker images for [Don't Starve Together][upstream] running on our
+[SteamCMD image][parent].
 
 ## Versions
 
-* [latest](./latest) available as `webhippie/dst:latest`
-
+For the available versions please look at [Docker Hub][dockerhub] or
+[Quay][quayio] or check the existing folders within the
+[GitHub repository][github].
 
 ## Volumes
 
-* /var/lib/game
-
+*  /var/lib/game
 
 ## Ports
 
-* 10999
-* 10888
-
+*  10999
+*  27017
+*  8767
 
 ## Available environment variables
 
-```bash
+```console
 DST_ACCOUNT_ENCODE_USER_PATH = true
 DST_ADMINLIST_FILE = ${DST_SERVER_DIR}/adminlist.txt
 DST_BLOCKLIST_FILE = ${DST_SERVER_DIR}/blocklist.txt
@@ -203,30 +202,31 @@ DST_STEAM_MASTER_SERVER_PORT = 27017
 DST_WHITELIST_FILE = ${DST_SERVER_DIR}/whitelist.txt
 ```
 
-
 ## Inherited environment variables
 
-* [webhippie/steamcmd](https://github.com/dockhippie/steamcmd#available-environment-variables)
-* [webhippie/ubuntu](https://github.com/dockhippie/ubuntu#available-environment-variables)
-
+*  [webhippie/steamcmd](https://github.com/dockhippie/steamcmd#available-environment-variables)
+*  [webhippie/ubuntu](https://github.com/dockhippie/ubuntu#available-environment-variables)
 
 ## Contributing
 
 Fork -> Patch -> Push -> Pull Request
 
-
 ## Authors
 
-* [Thomas Boerger](https://github.com/tboerger)
-
+*  [Thomas Boerger](https://github.com/tboerger)
 
 ## License
 
 MIT
 
-
 ## Copyright
 
-```
+```console
 Copyright (c) 2015 Thomas Boerger <http://www.webhippie.de>
 ```
+
+[upstream]: https://www.kleientertainment.com/games/dont-starve-together
+[parent]: https://github.com/dockhippie/steamcmd
+[dockerhub]: https://hub.docker.com/r/webhippie/dst/tags
+[quayio]: https://quay.io/repository/webhippie/dst?tab=tags
+[github]: https://github.com/dockhippie/dst
