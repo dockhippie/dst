@@ -13,13 +13,12 @@ RUN apt-get update -y && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN mkdir -p /usr/share/game && \
-	chown -R steam:steam /usr/share/game && \
-	/usr/bin/steamcmd +login anonymous +force_install_dir /usr/share/game +app_update 343050 validate +quit && \
+  chown -R steam:steam /usr/share/game && \
+  /usr/bin/steamcmd +login anonymous +force_install_dir /usr/share/game +app_update 343050 validate +quit && \
   rm -rf /var/log/steam/*
 
 COPY ./overlay /
 
-RUN set -eu; \
-    find /etc/container.d /etc/entrypoint.d -type f -name "*.sh" -exec sed -i 's/\r$//' {} +; \
-    if [ -f /usr/bin/container ]; then sed -i 's/\r$//' /usr/bin/container; fi; \
-    chmod +x /usr/bin/container /etc/container.d/*.sh /etc/entrypoint.d/*.sh
+RUN find /etc/container.d /etc/entrypoint.d -type f -name \*.sh -exec sed -i 's/\r$//' {} +; \
+  sed -i 's/\r$//' /usr/bin/container && \
+  chmod +x /usr/bin/container /etc/container.d/*.sh /etc/entrypoint.d/*.sh
