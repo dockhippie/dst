@@ -107,6 +107,9 @@ return {
 {{ if ne (getenv "DST_OVERRIDE_EARTHQUAKES") "" -}}
     earthquakes="{{ getenv "DST_OVERRIDE_EARTHQUAKES" }}",
 {{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_EXTRASTARTINGITEMS") "" -}}
+    extrastartingitems="{{ getenv "DST_OVERRIDE_EXTRASTARTINGITEMS" }}",
+{{ end -}}
 {{ if ne (getenv "DST_OVERRIDE_EYEOFTERROR") "" -}}
     eyeofterror="{{ getenv "DST_OVERRIDE_EYEOFTERROR" }}",
 {{ end -}}
@@ -139,6 +142,9 @@ return {
 {{ end -}}
 {{ if ne (getenv "DST_OVERRIDE_HAS_OCEAN") "" -}}
     has_ocean={{ getenv "DST_OVERRIDE_HAS_OCEAN" }},
+{{ end -}}
+{{ if ne (getenv "DST_OVERRIDE_HEALTHPENALTY") "" -}}
+    healthpenalty="{{ getenv "DST_OVERRIDE_HEALTHPENALTY" }}",
 {{ end -}}
 {{ if ne (getenv "DST_OVERRIDE_HOUNDMOUND") "" -}}
     houndmound="{{ getenv "DST_OVERRIDE_HOUNDMOUND" }}",
