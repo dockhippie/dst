@@ -1,4 +1,4 @@
-FROM ghcr.io/dockhippie/steamcmd:latest-amd64@sha256:74254d0d79ce01e5ca506f2bd182a73f73ee2fe62542c86819f8ee72f922e8af
+FROM ghcr.io/dockhippie/steamcmd:latest-amd64@sha256:867ec1f689b6401276c54c82369fcba7088beaa87ebd1d618f8bb35ab5eb866c
 
 VOLUME ["/var/lib/game", "/var/log/steam"]
 EXPOSE 10999 27017 8767
