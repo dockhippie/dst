@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 
       - name: Hub readme
-        uses: actionhippie/pushrm@39f1f71c5d4f9e72760d5d7eb4da6fe442da6e94 # v1
+        uses: actionhippie/pushrm@bde0a3065c7d578d91c6914a288b3220c5a168dc # v1
         with:
           provider: dockerhub
           target: webhippie/dst
@@ -27,7 +27,7 @@ jobs:
           readme: README.md
 
       - name: Quay readme
-        uses: actionhippie/pushrm@39f1f71c5d4f9e72760d5d7eb4da6fe442da6e94 # v1
+        uses: actionhippie/pushrm@bde0a3065c7d578d91c6914a288b3220c5a168dc # v1
         with:
           provider: quay
           target: quay.io/webhippie/dst
