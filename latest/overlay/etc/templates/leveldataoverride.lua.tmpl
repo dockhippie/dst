@@ -334,9 +334,9 @@ return {
 {{ end -}}
   },
 
-  random_set_pieces={ {{ if ne (getenv "DST_OVERRIDE_RANDOM_SET_PIECES") "" }}'{{ $vals := split (getenv "DST_OVERRIDE_RANDOM_SET_PIECES") "," }}{{ join $vals "', '" }}'{{ end }} },
-  required_prefabs={ {{ if ne (getenv "DST_OVERRIDE_REQUIRED_PREFABS") "" }}'{{ $vals := split (getenv "DST_OVERRIDE_REQUIRED_PREFABS") "," }}{{ join $vals "', '" }}'{{ end }} },
-  required_setpieces={ {{ if ne (getenv "DST_OVERRIDE_REQUIRED_SETPIECES") "" }}'{{ $vals := split (getenv "DST_OVERRIDE_REQUIRED_SETPIECES") "," }}{{ join $vals "', '" }}'{{ end }} },
-  substitutes={ {{ if ne (getenv "DST_OVERRIDE_SUBSTITUTES") "" }}'{{ $vals := split (getenv "DST_OVERRIDE_SUBSTITUTES") "," }}{{ join $vals "', '" }}'{{ end }} },
+  random_set_pieces={ {{ if ne (getenv "DST_OVERRIDE_RANDOM_SET_PIECES") "" }}'{{ $vals := strings.Split (getenv "DST_OVERRIDE_RANDOM_SET_PIECES") "," }}{{ join $vals "', '" }}'{{ end }} },
+  required_prefabs={ {{ if ne (getenv "DST_OVERRIDE_REQUIRED_PREFABS") "" }}'{{ $vals := strings.Split (getenv "DST_OVERRIDE_REQUIRED_PREFABS") "," }}{{ join $vals "', '" }}'{{ end }} },
+  required_setpieces={ {{ if ne (getenv "DST_OVERRIDE_REQUIRED_SETPIECES") "" }}'{{ $vals := strings.Split (getenv "DST_OVERRIDE_REQUIRED_SETPIECES") "," }}{{ join $vals "', '" }}'{{ end }} },
+  substitutes={ {{ if ne (getenv "DST_OVERRIDE_SUBSTITUTES") "" }}'{{ $vals := strings.Split (getenv "DST_OVERRIDE_SUBSTITUTES") "," }}{{ join $vals "', '" }}'{{ end }} },
   version={{ getenv "DST_OVERRIDE_VERSION" }}
 }

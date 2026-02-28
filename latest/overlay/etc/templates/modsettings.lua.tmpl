@@ -1,5 +1,5 @@
 {{ if ne (getenv "DST_FORCE_ENABLE_MODS") "" -}}
-{{ range (split (getenv "DST_FORCE_ENABLE_MODS") ",") }}
+{{ range (strings.Split (getenv "DST_FORCE_ENABLE_MODS") ",") }}
 ForceEnableMod("{{ . }}")
 {{ end -}}
 {{ end -}}
