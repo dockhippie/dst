@@ -1,11 +1,11 @@
 {{ if ne (getenv "DST_SERVER_MOD_SETUP") "" -}}
-{{ range (strings.Split (getenv "DST_SERVER_MOD_SETUP") ",") }}
+{{ range (getenv "DST_SERVER_MOD_SETUP" | strings.Split ",") }}
 ServerModSetup("{{ . }}")
 {{ end -}}
 {{ end -}}
 
 {{ if ne (getenv "DST_SERVER_MOD_COLLECTION_SETUP") "" }}
-{{ range (strings.Split (getenv "DST_SERVER_MOD_COLLECTION_SETUP") ",") -}}
+{{ range (getenv "DST_SERVER_MOD_COLLECTION_SETUP" | strings.Split ",") -}}
 ServerModCollectionSetup("{{ . }}")
 {{ end -}}
 {{ end -}}
