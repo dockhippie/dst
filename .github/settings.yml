@@ -1,7 +1,7 @@
 ---
 repository:
   name: dst
-  description: Docker images for dst
+  description: Docker images for Don't Starve Together
   topics: docker, image
 
   private: false

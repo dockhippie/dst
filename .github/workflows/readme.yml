@@ -8,26 +8,29 @@ name: readme
     branches:
       - master
 
+permissions:
+  contents: read
+
 jobs:
   readme:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout source
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        uses: actions/checkout@v6
 
       - name: Hub readme
-        uses: actionhippie/pushrm@bde0a3065c7d578d91c6914a288b3220c5a168dc # v1
+        uses: actionhippie/pushrm@v1
         with:
           provider: dockerhub
           target: webhippie/dst
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          description: Docker image for Don't Starve Together
+          description: Docker images for Don't Starve Together
           readme: README.md
 
       - name: Quay readme
-        uses: actionhippie/pushrm@bde0a3065c7d578d91c6914a288b3220c5a168dc # v1
+        uses: actionhippie/pushrm@v1
         with:
           provider: quay
           target: quay.io/webhippie/dst
