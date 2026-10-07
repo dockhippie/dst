@@ -156,7 +156,12 @@ jobs:
           done
 
           for repo in "${repos[@]}"; do
-            retry manifest-tool push from-args --platforms linux/amd64 --template $repo-ARCH --target $repo
+            args=()
+            for arch in "${archs[@]}"; do
+              args+=(--amend "${repo}-${arch}")
+            done
+            docker manifest create "$repo" "${args[@]}"
+            docker manifest push "$repo"
           done
 
 ...
